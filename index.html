@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <title>Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f619e0a3b4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="title">TODO</h1>
+        <i class="fa fa-sun-o" aria-hidden="true"></i>
+      </div>
+
+      <div class="create-todo-container">
+        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+        <input type="text" placeholder="Create a new todo..." id="add-todo" />
+        <i id="add-todo-btn" class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+
+      <div class="todolist-container">
+        <div id="todos"></div>
+        <div class="all-buttons">
+          <p id="count-todos">No item</p>
+          <button id="clear-btn">Clear&nbsp</button>
+          <button id="complete-btn">&nbspComplete</button>
+        </div>
+      </div>
+      <div class="filter-btns">
+        <button id="all-btn">All</button>
+        <button id="active-btn">Active</button>
+        <button id="completed-btn">Completed</button>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Halil Tunahan ACAR</a>.
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="project.js"></script>
+  </body>
+</html>
