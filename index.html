@@ -26,7 +26,12 @@
 
       <div class="create-todo-container">
         <i class="fa fa-circle-thin" aria-hidden="true"></i>
-        <input type="text" placeholder="Create a new todo..." id="add-todo" />
+        <input
+          type="text"
+          placeholder="Create a new todo..."
+          id="add-todo"
+          maxlength="60"
+        />
         <i id="add-todo-btn" class="fa fa-plus" aria-hidden="true"></i>
       </div>
 
@@ -41,15 +46,9 @@
       <div class="filter-btns">
         <button id="all-btn">All</button>
         <button id="active-btn">Active</button>
-        <button id="completed-btn">Completed</button>
+        <button id="completed-btn">Done</button>
       </div>
-
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Halil Tunahan ACAR</a>.
-      </div>
+      <div class="footer"></div>
     </div>
 
     <!-- SCRIPTS -->

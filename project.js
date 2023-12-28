@@ -20,17 +20,21 @@ addTodo.addEventListener("click", function () {
   let todo = document.createElement("div");
   todo.classList.add("todo", "activeTodo");
 
+  let checkBtnAndLi = document.createElement("div");
+  checkBtnAndLi.classList.add("checkBtnAndLi");
+  todo.appendChild(checkBtnAndLi);
+
   // checkButton design
   let checkButton = document.createElement("button");
   checkButton.innerHTML =
     '<i class="fa fa-circle-thin" aria-hidden="true"></i>';
   checkButton.classList.add("checkTodo");
-  todo.appendChild(checkButton);
+  checkBtnAndLi.appendChild(checkButton);
 
   // text design
   let li = document.createElement("li");
   li.innerText = `${inputTodo.value}`;
-  todo.appendChild(li);
+  checkBtnAndLi.appendChild(li);
 
   // deleteButton design
   let deleteButton = document.createElement("button");
@@ -49,7 +53,7 @@ addTodo.addEventListener("click", function () {
   updateLeftItems();
 
   // Complete & Uncomplete a todo
-  li.addEventListener("click", function () {
+  checkBtnAndLi.addEventListener("click", function () {
     if (li.style.textDecoration === "line-through") {
       li.style.textDecoration = "none";
       li.style.color = "white";
