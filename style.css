@@ -5,7 +5,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 300;
   color: white;
 }
 
@@ -14,7 +15,7 @@ body {
   justify-content: center;
   height: 100vh;
   background: url(images/bg-desktop-dark.jpg) no-repeat top center;
-  background-color: black;
+  background-color: hsl(235, 21%, 11%);
 }
 
 .container {
@@ -38,7 +39,7 @@ body {
 .create-todo-container {
   display: flex;
   margin-bottom: 30px;
-  background-color: rgb(31, 31, 31);
+  background-color: hsl(235, 24%, 19%);
   align-items: center;
   height: 50px;
   padding-left: 15px;
@@ -62,7 +63,7 @@ body {
 .todolist-container,
 .filter-btns {
   border-radius: 10px;
-  background-color: rgb(31, 31, 31);
+  background-color: hsl(235, 24%, 19%);
 }
 
 .todo,
