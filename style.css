@@ -10,6 +10,16 @@
   color: white;
 }
 
+.fa {
+  color: hsl(233, 14%, 35%);
+  -webkit-text-stroke: 0.5px hsl(235, 24%, 19%);
+}
+
+.fa-sun-o,
+.fa-check-circle {
+  color: white;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -30,6 +40,7 @@ body {
   margin-bottom: 30px;
   margin-right: 8px;
   margin-left: 5px;
+  color: white;
 }
 
 .title {
