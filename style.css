@@ -66,6 +66,7 @@ body {
 }
 
 .todo,
+.no-item-placeholder,
 .all-buttons,
 .filter-btns {
   list-style: none;
@@ -84,7 +85,8 @@ body {
   flex: 2;
   height: 100%;
   align-items: center;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 li {
@@ -107,9 +109,6 @@ li {
   padding-right: 50px;
 }
 
-#all-btn:hover,
-#active-btn:hover,
-#completed-btn:hover,
 #clear-btn:hover,
 #complete-btn:hover {
   color: white;
@@ -130,10 +129,18 @@ li {
 #completed-btn {
   background-color: transparent;
   border: none;
-  color: gray;
   font-size: 0.9rem;
   width: 50px;
   height: 100%;
+}
+
+.unfocused {
+  color: gray;
+}
+
+.focused,
+.unfocused:hover {
+  color: hsl(220, 98%, 61%);
 }
 
 #count-todos {
@@ -152,7 +159,7 @@ li {
   color: red;
 }
 
-.hideTodo {
+.hideElement {
   display: none;
 }
 

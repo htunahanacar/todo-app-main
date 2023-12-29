@@ -36,7 +36,13 @@
       </div>
 
       <div class="todolist-container">
-        <div id="todos"></div>
+        <div id="todos">
+          <!--Silinecek basla-->
+          <div class="no-item-placeholder">
+            <li>You have no todos yet. Add one!</li>
+          </div>
+          <!--Silinecek bitir-->
+        </div>
         <div class="all-buttons">
           <p id="count-todos">No item</p>
           <button id="clear-btn">Clear&nbsp</button>
@@ -44,9 +50,9 @@
         </div>
       </div>
       <div class="filter-btns">
-        <button id="all-btn">All</button>
-        <button id="active-btn">Active</button>
-        <button id="completed-btn">Done</button>
+        <button class="focused" id="all-btn">All</button>
+        <button class="unfocused" id="active-btn">Active</button>
+        <button class="unfocused" id="completed-btn">Done</button>
       </div>
       <div class="footer"></div>
     </div>

@@ -8,7 +8,7 @@ const todos = document.getElementById("todos");
 
 function updateLeftItems() {
   const todoLeft = document.getElementById("count-todos");
-  const count = document.querySelectorAll(".todo").length;
+  let count = document.querySelectorAll(".todo:not(.hideElement)").length;
   todoLeft.innerText = `${count} items left`;
 }
 
@@ -16,6 +16,7 @@ function updateLeftItems() {
 
 addTodo.addEventListener("click", function () {
   // 1ST AREA Input and TodoList
+
   // todo div design includes {checkButton} and {li}
   let todo = document.createElement("div");
   todo.classList.add("todo", "activeTodo");
@@ -47,9 +48,12 @@ addTodo.addEventListener("click", function () {
     alert("Please enter a todo");
   } else {
     todos.appendChild(todo);
+    let noTodoPlaceholder = document.querySelector(".no-item-placeholder");
+    noTodoPlaceholder.classList.add("hideElement");
   }
 
   inputTodo.value = "";
+
   updateLeftItems();
 
   // Complete & Uncomplete a todo
@@ -110,35 +114,56 @@ addTodo.addEventListener("click", function () {
   });
 
   // 3RD AREA- Filtering Todos
+  // constants for area3
+  let allTodosBtn = document.getElementById("all-btn");
+  let activeTodosBtn = document.getElementById("active-btn");
+  let completedTodosBtn = document.getElementById("completed-btn");
+
+  function focus(focusThis, unfocusThis1, unfocusThis2) {
+    focusThis.classList.remove("unfocused");
+    unfocusThis1.classList.remove("focused");
+    unfocusThis2.classList.remove("focused");
+
+    focusThis.classList.add("focused");
+    unfocusThis1.classList.add("unfocused");
+    unfocusThis2.classList.add("unfocused");
+  }
+
   // Filtering All Todos
-  const allTodosBtn = document.getElementById("all-btn");
+
   allTodosBtn.addEventListener("click", function () {
+    focus(allTodosBtn, activeTodosBtn, completedTodosBtn);
+    updateLeftItems();
     var todoArray = document.querySelectorAll(".todo");
     todoArray.forEach(function (todo) {
-      todo.classList.remove("hideTodo");
+      todo.classList.remove("hideElement");
     });
   });
 
   // Filtering Active Todos
-  const activeTodosBtn = document.getElementById("active-btn");
+
   activeTodosBtn.addEventListener("click", function () {
+    focus(activeTodosBtn, allTodosBtn, completedTodosBtn);
+    updateLeftItems();
     var todoArray = document.querySelectorAll(".todo");
     todoArray.forEach(function (todo) {
-      todo.classList.remove("hideTodo");
+      todo.classList.remove("hideElement");
       if (todo.classList.contains("completedTodo")) {
-        todo.classList.add("hideTodo");
+        todo.classList.add("hideElement");
       }
     });
   });
 
   // Filtering Completed Todos
-  const completedTodosBtn = document.getElementById("completed-btn");
+
   completedTodosBtn.addEventListener("click", function () {
+    focus(completedTodosBtn, allTodosBtn, activeTodosBtn);
+    updateLeftItems();
     var todoArray = document.querySelectorAll(".todo");
     todoArray.forEach(function (todo) {
-      todo.classList.remove("hideTodo");
+      todo.classList.remove("hideElement");
       if (todo.classList.contains("activeTodo")) {
-        todo.classList.add("hideTodo");
+        todo.classList.add("hideElement");
       }
     });
   });
