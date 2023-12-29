@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
+:root {
+  --body-bg: hsl(235, 21%, 11%);
+  --container-bg: hsl(235, 24%, 19%);
+  --btn-color: hsl(234, 11%, 52%);
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +16,8 @@
 }
 
 .fa {
-  color: hsl(233, 14%, 35%);
-  -webkit-text-stroke: 0.5px hsl(235, 24%, 19%);
+  color: var(--btn-color);
+  -webkit-text-stroke: 0.5px var(--container-bg);
 }
 
 .fa-sun-o,
@@ -25,7 +30,7 @@ body {
   justify-content: center;
   height: 100vh;
   background: url(images/bg-desktop-dark.jpg) no-repeat top center;
-  background-color: hsl(235, 21%, 11%);
+  background-color: var(--body-bg);
 }
 
 .container {
@@ -50,7 +55,7 @@ body {
 .create-todo-container {
   display: flex;
   margin-bottom: 30px;
-  background-color: hsl(235, 24%, 19%);
+  background-color: var(--container-bg);
   align-items: center;
   height: 50px;
   padding-left: 15px;
@@ -74,7 +79,7 @@ body {
 .todolist-container,
 .filter-btns {
   border-radius: 10px;
-  background-color: hsl(235, 24%, 19%);
+  background-color: var(--container-bg);
 }
 
 .todo,
@@ -130,7 +135,7 @@ li {
 #complete-btn {
   background-color: transparent;
   border: none;
-  color: gray;
+  color: var(--btn-color);
   font-size: 0.75rem;
   width: 50px;
   height: 100%;
@@ -147,7 +152,7 @@ li {
 }
 
 .unfocused {
-  color: gray;
+  color: var(--btn-color);
 }
 
 .focused,
@@ -157,7 +162,7 @@ li {
 
 #count-todos {
   flex: 3;
-  color: grey;
+  color: var(--btn-color);
   font-size: 0.75rem;
 }
 
